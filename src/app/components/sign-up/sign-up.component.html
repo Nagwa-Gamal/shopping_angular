@@ -1,0 +1,52 @@
+<div class="body">
+  <h2> Sign Up</h2>
+<form   #f="ngForm" class="m-auto w-50 pt-5" (ngSubmit)="register(f)">
+   
+  <!-- <div class="alert alert-danger" *ngIf="message">{{message}}</div> -->
+
+  <div class="alert alert-danger" *ngIf="errors">
+    <div class="alert alert-danger" *ngFor="let error of errors">
+      {{error}}</div>
+    </div>
+
+
+    <div class="form-row">
+        
+        <div class="form-group col-md-6">
+            <label for="fName">First Name</label>
+            <input  ngModel name="FirstName" #fname="ngModel" type="text" class="form-control" id="fName" placeholder="First Name" required>
+          <div class="alert alert-danger" *ngIf="fname.invalid&&fname.touched">Firstname Required</div>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="lName">Last Name</label>
+            <input ngModel name="LastName" #lname="ngModel"type="text" class="form-control" id="lName" placeholder="Last Name" required>
+            <div class="alert alert-danger" *ngIf="lname.invalid&&lname.touched">Lastname Required</div>
+
+          </div>
+
+      <div class="form-group col-md-6">
+        <label for="email">Email</label>
+        <input ngModel name="Email" type="email" #email="ngModel" class="form-control" id="email"  placeholder="Email" 
+        required email>
+        <div class="alert alert-danger" *ngIf="email.touched&&email.errors?.required">Email Required</div>
+        <div class="alert alert-danger" *ngIf="email.touched&&email.errors?.email">Your input does not match email format</div>
+  
+      </div>
+     
+      <div class="form-group col-md-6">
+        <label for="password">Password</label>
+        <input  ngModel name="Password" #password="ngModel" type="password" class="form-control" id="password"  placeholder="Password" 
+        required
+        minlength="6"
+        >
+        <div class="alert alert-danger" *ngIf="password.touched&&password.errors?.required">Password Required</div>
+        <div class="alert alert-danger" *ngIf="password.touched&&password.errors?.minlength">password must be at least 6 letters</div>
+
+      </div>
+    </div>
+ 
+
+    <button type="submit"  [disabled]="f.invalid" class="btn btn-primary mt-3">Sign Up</button>
+  </form>
+</div>

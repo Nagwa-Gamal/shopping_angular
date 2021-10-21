@@ -1,0 +1,35 @@
+.dropdown-toggle{
+    cursor:pointer;
+}
+
+
+.sign{
+ color:gray;
+ padding: 10px;
+}
+.nav-link{
+text-decoration: none;
+color:gray;
+}
+
+.navb{
+    text-decoration: none;
+    list-style: none;
+    margin-left: 420px;
+    padding-top:10px;
+    font-size: 20px;;
+}
+
+ 
+
+h1{
+    color:rgb(55, 82, 236);
+    text-align:center;
+    margin-left: 400px;
+}
+.navbar-brand {
+    color:gray;
+    font-size: 30px;
+    margin-left:10px;
+
+}

@@ -1,0 +1,16 @@
+<div class="container">
+    <h2 *ngIf="app.Login" class="text-center" >Orders</h2>
+  
+  <div class="row">
+  <div class="card col-md-3 col-sm-6 p-0 m-3" *ngFor="let order of result" >
+     <img [src]="order.imageUrl" class="card-img-top" alt="image not found"> 
+      <div class="card-body">
+        <h5 class="card-title">Name : {{order.name}}</h5>
+        <p class="card-text">Price : {{order.price}}</p>
+        <p class="card-text">Quantity : {{order.quantity}}</p>
+         
+        <a  (click)="RemoveFromOrders(order)" class="btn btn-primary btn-lg btn-block mt-2">Cancle</a>
+      </div>
+  </div>
+  </div>
+  </div>
